@@ -1,0 +1,475 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "KUKSA_VAL",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\AUTOMOTIVE\\KUKSA_VAL\\UPSTREAM_CLONE",
+    "git": {
+      "head": "f0e028bc2d29821233af7ff75be4ed57aa59e77a",
+      "url": "https://github.com/eclipse/kuksa.val",
+      "branch": "master",
+      "committed_at": "2024-11-05T11:13:07+01:00"
+    }
+  },
+  "metrics": {
+    "files_total": 130,
+    "source_files_scanned": 55,
+    "lines_of_code": 8351,
+    "languages": {
+      ".hpp": 27,
+      ".cpp": 20,
+      ".json": 14,
+      ".md": 13,
+      ".yml": 11,
+      "(none)": 8,
+      ".ini": 5,
+      ".sh": 4,
+      ".txt": 4,
+      ".key": 4,
+      ".cmake": 3,
+      ".py": 3,
+      ".pem": 3,
+      ".token": 3,
+      ".in": 2
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 5,
+    "unique": 5,
+    "by_ecosystem": {
+      "native": 3,
+      "npm": 2
+    },
+    "list": [
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "kuksa-val-server/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "OpenSSL",
+        "version": "",
+        "source_file": "kuksa-val-server/CMakeLists.txt",
+        "raw": "find_package(OpenSSL"
+      },
+      {
+        "ecosystem": "native",
+        "name": "codecov",
+        "version": "",
+        "source_file": "kuksa-val-server/CMakeLists.txt",
+        "raw": "find_package(codecov"
+      },
+      {
+        "ecosystem": "npm",
+        "name": "node-red-contrib-web-worldmap",
+        "version": "~5.0.4",
+        "source_file": "kuksa_apps/node-red/mqtt/package.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "npm",
+        "name": "node-red-dashboard",
+        "version": "~3.6.5",
+        "source_file": "kuksa_apps/node-red/mqtt/package.json",
+        "raw": ""
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 57,
+    "files_with_findings": 52,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 57
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 0,
+        "findings": []
+      },
+      "A04-InsecureDesign": {
+        "count": 5,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/interface/IVssDatabase.hpp",
+            "line": 53,
+            "cwe": "CWE-",
+            "snippet": "// TODO: temporary added while components are refactored"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/src/AccessChecker.cpp",
+            "line": 81,
+            "cwe": "CWE-",
+            "snippet": "// TODO check if this function is needed and if false here is correct"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/src/Authenticator.cpp",
+            "line": 157,
+            "cwe": "CWE-",
+            "snippet": "// TODO use regex to check"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/src/VssDatabase.cpp",
+            "line": 274,
+            "cwe": "CWE-",
+            "snippet": "// TODO- Regex could be used here??"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/src/WebSockHttpFlexServer.cpp",
+            "line": 974,
+            "cwe": "CWE-",
+            "snippet": "/* TODO: There is a crash when using SSL to communicate"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 52,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/docker/collect-deployment-artifacts.sh",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.eclipse.org/org/documents/edl-v10.php"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/docker/startkuksaval.sh",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.eclipse.org/org/documents/edl-v10.php"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/AccessChecker.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/Authenticator.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/BasicLogger.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/exception.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/grpcHandler.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/JsonResponses.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/KuksaChannel.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/MQTTPublisher.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/OverlayLoader.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/ssl_stream.hpp",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/SubscriptionHandler.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/visconf.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VssCommandProcessor.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VssDatabase.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VssDatabase_Record.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VSSPath.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VSSRequestJsonSchema.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/VSSRequestValidator.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/WebSockHttpFlexServer.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/interface/IAccessChecker.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/interface/IAuthenticator.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/interface/ILogger.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          },
+          {
+            "severity": "low",
+            "file": "kuksa-val-server/include/interface/IPublisher.hpp",
+            "line": 8,
+            "cwe": "CWE-319",
+            "snippet": "*    http://www.apache.org/licenses/LICENSE-2.0"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 0,
+    "files_with_findings": 0,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:9e0fb0d6-aeab-57c3-8203-679918535c2d",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T14:36:48Z",
+      "component": {
+        "type": "application",
+        "name": "KUKSA_VAL",
+        "version": "f0e028bc2d29",
+        "bom-ref": "pkg:generic/anticloud/KUKSA_VAL@f0e028bc2d29",
+        "purl": "pkg:generic/anticloud/KUKSA_VAL@f0e028bc2d29",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "f0e028bc2d29821233af7ff75be4ed57aa59e77a"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/eclipse/kuksa.val"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "Threads",
+        "version": "unspecified",
+        "purl": "pkg:generic/Threads",
+        "bom-ref": "native/Threads@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "OpenSSL",
+        "version": "unspecified",
+        "purl": "pkg:generic/OpenSSL",
+        "bom-ref": "native/OpenSSL@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "codecov",
+        "version": "unspecified",
+        "purl": "pkg:generic/codecov",
+        "bom-ref": "native/codecov@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "node-red-contrib-web-worldmap",
+        "version": "~5.0.4",
+        "purl": "pkg:npm/node-red-contrib-web-worldmap@~5.0.4",
+        "bom-ref": "npm/node-red-contrib-web-worldmap@~5.0.4"
+      },
+      {
+        "type": "library",
+        "name": "node-red-dashboard",
+        "version": "~3.6.5",
+        "purl": "pkg:npm/node-red-dashboard@~3.6.5",
+        "bom-ref": "npm/node-red-dashboard@~3.6.5"
+      }
+    ]
+  },
+  "elapsed_seconds": 85.35
+}

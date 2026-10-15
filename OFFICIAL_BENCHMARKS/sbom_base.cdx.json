@@ -1,0 +1,74 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:9e0fb0d6-aeab-57c3-8203-679918535c2d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T14:36:48Z",
+    "component": {
+      "type": "application",
+      "name": "KUKSA_VAL",
+      "version": "f0e028bc2d29",
+      "bom-ref": "pkg:generic/anticloud/KUKSA_VAL@f0e028bc2d29",
+      "purl": "pkg:generic/anticloud/KUKSA_VAL@f0e028bc2d29",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "f0e028bc2d29821233af7ff75be4ed57aa59e77a"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/eclipse/kuksa.val"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "Threads",
+      "version": "unspecified",
+      "purl": "pkg:generic/Threads",
+      "bom-ref": "native/Threads@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "OpenSSL",
+      "version": "unspecified",
+      "purl": "pkg:generic/OpenSSL",
+      "bom-ref": "native/OpenSSL@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "codecov",
+      "version": "unspecified",
+      "purl": "pkg:generic/codecov",
+      "bom-ref": "native/codecov@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "node-red-contrib-web-worldmap",
+      "version": "~5.0.4",
+      "purl": "pkg:npm/node-red-contrib-web-worldmap@~5.0.4",
+      "bom-ref": "npm/node-red-contrib-web-worldmap@~5.0.4"
+    },
+    {
+      "type": "library",
+      "name": "node-red-dashboard",
+      "version": "~3.6.5",
+      "purl": "pkg:npm/node-red-dashboard@~3.6.5",
+      "bom-ref": "npm/node-red-dashboard@~3.6.5"
+    }
+  ]
+}
